@@ -1,0 +1,1200 @@
+<!-- BBA landing page (lightweight) — paste into a FULL-WIDTH GoHighLevel Custom HTML/JS element -->
+<script>document.documentElement.className += ' js';</script>
+<style>
+  .bba-page, .bba-page *, .bba-page *::before, .bba-page *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #05070d;
+    --white: #ffffff;
+    --blue: #38B6FF;
+    --grey: linear-gradient(180deg, #0c1220 0%, #131b2e 100%);
+    --grey2: #142647;
+    --muted: #8a93a3;
+  }
+
+  html { scroll-behavior: smooth; overflow-x: hidden; }
+
+  .bba-page {
+    position: relative;
+    isolation: isolate;
+    background: #05070d;
+    overflow-x: hidden;
+    color: var(--white);
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Fixed glow layer (matches Split men.html .bg-glow) */
+  .bba-page::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 15% 10%, rgba(59,130,246,0.20), transparent 55%),
+      radial-gradient(circle at 85% 90%, rgba(30,58,138,0.25), transparent 55%),
+      radial-gradient(circle at 50% 50%, rgba(96,165,250,0.05), transparent 70%),
+      linear-gradient(180deg, #05070d 0%, #0a1020 100%);
+  }
+
+  /* ── TOP BAR ── */
+  .bba-page .topbar {
+    position: relative;
+    background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.015)), #0a0b0e;
+    border-bottom: 1px solid rgba(255,255,255,.10);
+    text-align: center;
+    padding: 10px 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: clamp(10px, 1.3vw, 12px);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #00AEEF;
+  }
+
+  /* ── HERO BLOCK (dark, glow-at-top — matches Split men.html hero) ── */
+  .bba-page .hero-block {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+  }
+  /* top-center blue glow orb */
+  .bba-page .hero-block::after {
+    content: "";
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 900px;
+    max-width: 130vw;
+    height: 900px;
+    border-radius: 50%;
+    background: rgba(56,182,255,0.15);
+    filter: blur(160px);
+    z-index: 0;
+    pointer-events: none;
+  }
+  /* darkening mask: transparent at top-center, solid by 70% */
+  .bba-page .hero-block::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 0%, transparent 0%, #05070d 70%);
+    z-index: 1;
+    pointer-events: none;
+  }
+  .bba-page .hero-block > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ── HERO ── */
+  .bba-page .hero {
+    padding: 60px 20px 40px;
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .bba-page .hero .eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 16px;
+  }
+
+  .bba-page .hero h1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: clamp(28px, 5vw, 46px);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--white);
+    margin-bottom: 20px;
+  }
+
+  .bba-page .hero h1 span {
+    color: var(--blue);
+  }
+
+  .bba-page .hero .sub {
+    font-size: 17px;
+    color: #ccc;
+    max-width: 560px;
+    margin: 0 auto 36px;
+  }
+
+  /* ── VIDEO WRAPPER ── */
+  .bba-page .video-section {
+    max-width: 840px;
+    margin: 0 auto;
+    padding: 0 20px 60px;
+  }
+
+  .bba-page .video-wrap {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #0a0b14;
+    border: 1px solid rgba(56,182,255,0.30);
+    box-shadow: 0 20px 60px -20px rgba(56,182,255,0.4);
+  }
+
+  .bba-page .video-wrap iframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16/9;
+    border: none;
+  }
+
+
+  .bba-page .video-nudge {
+    text-align: center;
+    margin-top: 14px;
+    font-size: 13px;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  /* ── SECTION WRAPPER ── */
+  .bba-page .section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    text-align: center;
+  }
+
+  /* Full-width alternating section band (matches Split men.html) */
+  .bba-page .band {
+    position: relative;
+  }
+  .bba-page .band::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 100vw;
+    transform: translateX(-50%);
+    background: linear-gradient(180deg, #0a1020 0%, #05070d 100%);
+    z-index: -1;
+  }
+
+  .bba-page .section-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 12px;
+  }
+
+  .bba-page .section-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: clamp(22px, 3.5vw, 34px);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 40px;
+  }
+
+  /* ── DIVIDER ── */
+  .bba-page .divider {
+    height: 1px;
+    background: var(--grey2);
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* ── RESULTS STRIP (STATS) ── */
+  .bba-page .stats-strip {
+    background: transparent;
+  }
+
+  .bba-page .stats-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 44px 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    text-align: center;
+  }
+
+  .bba-page .stats-inner > div {
+    background: linear-gradient(180deg, #0c1220 0%, #131b2e 100%);
+    border: 1px solid rgba(59,130,246,0.18);
+    border-radius: 16px;
+    padding: 28px 14px;
+    transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+  }
+
+  .bba-page .stats-inner > div:hover {
+    transform: translateY(-3px);
+    border-color: rgba(56,182,255,0.45);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.4), 0 0 30px rgba(59,130,246,0.14);
+  }
+
+  .bba-page .stat-num {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: clamp(32px, 5vw, 52px);
+    color: #ffffff;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .bba-page .stat-label {
+    font-size: 12px;
+    color: #64748b;
+    line-height: 1.4;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+
+  /* ── BEFORE/AFTER GRID ── */
+  .bba-page .ba-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+  }
+
+  .bba-page .ba-card {
+    background: var(--grey);
+    border: 1px solid var(--grey2);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .bba-page .ba-photos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    background: var(--grey2);
+  }
+
+  .bba-page .ba-photo {
+    background: var(--grey2);
+    aspect-ratio: 3/4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* When real images are dropped in */
+  .bba-page .ba-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .bba-page .ba-photo-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.7);
+    text-align: center;
+    padding: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .bba-page .ba-info {
+    padding: 14px 16px;
+  }
+
+  .bba-page .ba-name {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+
+  .bba-page .ba-result {
+    font-size: 13px;
+    color: var(--blue);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .bba-page .ba-quote {
+    font-size: 12px;
+    color: #aaa;
+    line-height: 1.5;
+    font-style: italic;
+  }
+
+  /* ── VIDEO TESTIMONIALS ── */
+  .bba-page .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 28px;
+  }
+
+  .bba-page .testi-card {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .bba-page .testi-quote {
+    background: var(--grey);
+    border: 1px solid var(--grey2);
+    border-radius: 14px;
+    padding: 20px 22px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #e8e8e8;
+  }
+
+  .bba-page .testi-video {
+    background: var(--grey2);
+    aspect-ratio: 9/16;
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  .bba-page .testi-video iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+  }
+
+  .bba-page .play-btn {
+    position: absolute;
+    width: 52px;
+    height: 52px;
+    background: var(--blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .bba-page .play-btn::after {
+    content: '';
+    border: solid transparent;
+    border-width: 8px 0 8px 14px;
+    border-left-color: var(--black);
+    margin-left: 3px;
+  }
+
+  .bba-page .testi-info {
+    padding: 2px 4px;
+  }
+
+  .bba-page .testi-name {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+
+  .bba-page .testi-tag {
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  /* ── WHAT YOU GET ── */
+  .bba-page .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+  }
+
+  .bba-page .feature {
+    background: var(--grey);
+    border: 1px solid var(--grey2);
+    border-radius: 6px;
+    padding: 24px 22px;
+  }
+
+  /* scroll-reveal: slide in from the left */
+  html.js .features .feature {
+    opacity: 0;
+    transform: translateX(-48px);
+    transition: opacity 0.6s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+  html.js .features .feature.reveal {
+    opacity: 1;
+    transform: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html.js .features .feature { opacity: 1; transform: none; transition: none; }
+  }
+
+  .bba-page .feature-icon {
+    margin-bottom: 14px;
+    color: var(--blue);
+  }
+  .bba-page .feature-icon svg {
+    width: 30px;
+    height: 30px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .bba-page .feature-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+
+  .bba-page .feature-desc {
+    font-size: 13px;
+    color: #aaa;
+    line-height: 1.6;
+  }
+
+  /* ── WHO IT'S FOR ── */
+  .bba-page .for-list {
+    display: grid;
+    gap: 12px;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .bba-page .for-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: var(--grey);
+    border: 1px solid var(--grey2);
+    border-radius: 6px;
+    padding: 16px 18px;
+  }
+
+  /* scroll-reveal: slide in from the left */
+  html.js .for-list .for-item {
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: opacity 0.55s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+  html.js .for-list .for-item.reveal {
+    opacity: 1;
+    transform: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html.js .for-list .for-item { opacity: 1; transform: none; transition: none; }
+  }
+
+  .bba-page .for-check {
+    color: var(--blue);
+    font-weight: 800;
+    font-size: 16px;
+    margin-top: 1px;
+    flex-shrink: 0;
+  }
+
+  .bba-page .for-text {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  /* ── CTA SECTION ── */
+  .bba-page .cta-section {
+    background:
+      radial-gradient(circle at 50% 0%, rgba(56,182,255,0.18), transparent 60%),
+      linear-gradient(180deg, #05070d 0%, #0a1020 100%);
+    border-top: 1px solid var(--grey2);
+    border-bottom: 1px solid var(--grey2);
+  }
+
+  .bba-page .cta-inner {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 70px 20px;
+    text-align: center;
+  }
+
+  .bba-page .cta-inner h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: clamp(24px, 4vw, 38px);
+    line-height: 1.2;
+    margin-bottom: 18px;
+  }
+
+  .bba-page .cta-inner p {
+    font-size: 16px;
+    color: #ccc;
+    margin-bottom: 36px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .bba-page .cta-box {
+    background: var(--black);
+    border: 2px solid var(--blue);
+    border-radius: 8px;
+    padding: 28px 32px;
+    margin-bottom: 24px;
+  }
+
+  .bba-page .cta-step {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+
+  .bba-page .cta-message {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: clamp(18px, 3vw, 26px);
+    color: var(--blue);
+    letter-spacing: 0.02em;
+  }
+
+  .bba-page .cta-sub {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 8px;
+  }
+
+  .bba-page .cta-btn {
+    display: inline-block;
+    background: var(--blue);
+    color: var(--black);
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 15px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 16px 36px;
+    border-radius: 4px;
+    transition: opacity 0.2s;
+  }
+
+  .bba-page .cta-btn:hover { opacity: 0.85; }
+
+  .bba-page .platform-btns {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .bba-page .social-icon-btn {
+    display: inline-block;
+    transition: transform 0.15s, opacity 0.15s;
+    line-height: 0;
+  }
+  .bba-page .social-icon-btn:hover { transform: scale(1.1); opacity: 0.9; }
+
+  /* ── FOOTER ── */
+  .bba-page footer {
+    padding: 32px 20px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .bba-page .stats-inner { grid-template-columns: 1fr 1fr; gap: 12px; padding: 28px 16px 24px; }
+    .bba-page .stats-inner > div { padding: 18px 8px; }
+    .bba-page .ba-grid { grid-template-columns: 1fr; }
+    .bba-page .testi-grid { grid-template-columns: 1fr; }
+    .bba-page .features { grid-template-columns: 1fr; }
+
+    /* compact hero + video spacing on mobile: stats fit above the fold, with a little breathing room */
+    .bba-page .hero { padding: 14px 20px 10px; }
+    .bba-page .hero h1 { margin-bottom: 8px; }
+    .bba-page .hero .sub { margin-bottom: 16px; font-size: 15px; }
+    .bba-page .video-section { padding: 0 20px 18px; }
+    .bba-page .video-nudge { margin-top: 12px; }
+  }
+
+  /* ── TICKER ── */
+  .bba-page .tk-wrap {
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100%;
+    cursor: grab;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .bba-page .tk-wrap::-webkit-scrollbar { display: none; }
+  .bba-page .tk-wrap:active { cursor: grabbing; }
+  .bba-page .tk-track {
+    display: flex;
+    gap: 10px;
+    width: max-content;
+  }
+  .bba-page .tk-card {
+    flex-shrink: 0;
+    width: 260px;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .bba-page .tk-card img {
+    width: 100%;
+    display: block;
+  }
+  /* ── FAQ ── */
+  .bba-page .faq-accent {
+    background: linear-gradient(135deg, #38B6FF 0%, #60a5fa 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .bba-page .faq-sub {
+    text-align: center;
+    color: var(--muted);
+    font-size: 17px;
+    margin-top: -24px;
+    margin-bottom: 44px;
+  }
+  .bba-page .faq-list {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .bba-page .faq-item {
+    border: 1px solid rgba(59,130,246,0.14);
+    background: linear-gradient(180deg, #0c1220 0%, #131b2e 100%);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: border-color 0.25s ease;
+  }
+  .bba-page .faq-item[open] { border-color: rgba(56,182,255,0.4); }
+  .bba-page .faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    color: #fff;
+    line-height: 1.4;
+    text-align: left;
+  }
+  .bba-page .faq-item summary::-webkit-details-marker { display: none; }
+  .bba-page .faq-item summary:hover { color: #60a5fa; }
+  .bba-page .faq-toggle {
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3b82f6, #1e3a8a);
+    color: #fff;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1;
+    transition: transform 0.3s ease;
+  }
+  .bba-page .faq-item[open] .faq-toggle { transform: rotate(45deg); }
+  .bba-page .faq-answer {
+    padding: 0 24px 22px;
+    color: #cbd5e1;
+    font-size: 15px;
+    line-height: 1.65;
+    text-align: left;
+  }
+  .bba-page .faq-answer p { margin: 0; }
+</style>
+<div class="bba-page">
+
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <span>Watch the full video below</span>
+  <img src="https://jasestuart.github.io/LOOM-PITCH-JASE-M/assets/embed/img01.png" alt="BBA Logo" style="height:28px;width:28px;object-fit:contain;position:absolute;right:14px;top:50%;transform:translateY(-50%);border-radius:50%;" />
+</div>
+
+<!-- HERO -->
+<div class="hero-block">
+<section class="hero">
+  <h1>I made this video for you. <span>Watch it.</span></h1>
+  <p class="sub">I'll show you exactly what we do, why it works, and whether it's the right fit for you.</p>
+</section>
+
+<!-- VIDEO -->
+<section class="video-section">
+  <div class="video-wrap">
+    <iframe
+      src="https://player.vimeo.com/video/1208196451?autoplay=1&muted=1&title=0&byline=0&portrait=0"
+      allowfullscreen
+      allow="autoplay; fullscreen"
+    ></iframe>
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div>
+      <div class="stat-num slot" id="stat1" data-final="4,000+">0</div>
+      <div class="stat-label">Transformations</div>
+    </div>
+    <div>
+      <div class="stat-num slot" id="stat2" data-final="20+">0</div>
+      <div class="stat-label">Countries</div>
+    </div>
+    <div>
+      <div class="stat-num slot" id="stat3" data-final="12+">0</div>
+      <div class="stat-label">Years coaching</div>
+    </div>
+    <div>
+      <div class="stat-num slot" id="stat4" data-final="98%">0</div>
+      <div class="stat-label">Finish rate</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+(function() {
+  const slots = [
+    { el: document.getElementById('stat1'), chars: '0123456789,+', final: '4,000+' },
+    { el: document.getElementById('stat2'), chars: '0123456789+', final: '20+' },
+    { el: document.getElementById('stat3'), chars: '0123456789+', final: '12+' },
+    { el: document.getElementById('stat4'), chars: '0123456789%', final: '98%' },
+  ];
+
+  function randomChar(chars) {
+    return chars[Math.floor(Math.random() * chars.length)];
+  }
+
+  function scramble(slot, duration, callback) {
+    const final = slot.final;
+    const start = performance.now();
+    function frame(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const revealedCount = Math.floor(progress * final.length);
+      let display = '';
+      for (let i = 0; i < final.length; i++) {
+        if (i < revealedCount) {
+          display += final[i];
+        } else {
+          display += randomChar(slot.chars);
+        }
+      }
+      slot.el.textContent = display;
+      if (progress < 1) {
+        requestAnimationFrame(frame);
+      } else {
+        slot.el.textContent = final;
+        if (callback) callback();
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+
+  function runAll() {
+    slots.forEach((slot, i) => {
+      setTimeout(() => scramble(slot, 1200), i * 200);
+    });
+  }
+
+  // Trigger when stats strip enters viewport
+  const strip = document.querySelector('.stats-strip');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        runAll();
+        observer.disconnect();
+      }
+    });
+  }, { threshold: 0.4 });
+  observer.observe(strip);
+})();
+</script>
+
+<!-- BEFORE/AFTER GALLERY -->
+<section class="band" style="padding:40px 0 60px;">
+  <p class="section-label" style="text-align:center;margin-bottom:24px;">Real results</p>
+  <div style="position:relative;">
+    <div class="tk-wrap">
+      <div class="tk-track" id="tkTrack">
+      <div class="tk-card"><img src="https://jasestuart.github.io/LOOM-PITCH-JASE-M/assets/embed/img02.webp" alt="BBA transformation"></div>
+      <div class="tk-card"><img src="https://jasestuart.github.io/LOOM-PITCH-JASE-M/assets/embed/img03.webp" alt="BBA transformation"></div>
+      <div class="tk-card"><img src="https://jasestuart.github.io/LOOM-PITCH-JASE-M/assets/embed/img04.webp" alt="BBA transformation"></div>
+      <div class="tk-card"><img src="https://jasestuart.github.io/LOOM-PITCH-JASE-M/assets/embed/img05.webp" alt="BBA transformation"></div>
+      <div class="tk-card"><img src="https://jasestuart.github.io/LOOM-PITCH-JASE-M/assets/embed/img06.webp" alt="BBA transformation"></div>
+      <div class="tk-card"><img src="https://jasestuart.github.io/LOOM-PITCH-JASE-M/assets/embed/img07.webp" alt="BBA transformation"></div>
+      <div class="tk-card"><img src="https://jasestuart.github.io/LOOM-PITCH-JASE-M/assets/embed/img08.webp" alt="BBA transformation"></div>
+      <div class="tk-card"><img src="https://jasestuart.github.io/LOOM-PITCH-JASE-M/assets/embed/img09.webp" alt="BBA transformation"></div>
+      <div class="tk-card"><img src="https://jasestuart.github.io/LOOM-PITCH-JASE-M/assets/embed/img10.webp" alt="BBA transformation"></div>
+      <div class="tk-card"><img src="https://jasestuart.github.io/LOOM-PITCH-JASE-M/assets/embed/img11.webp" alt="BBA transformation"></div>
+      <div class="tk-card"><img src="https://jasestuart.github.io/LOOM-PITCH-JASE-M/assets/embed/img12.webp" alt="BBA transformation"></div>
+      <div class="tk-card"><img src="https://jasestuart.github.io/LOOM-PITCH-JASE-M/assets/embed/img13.webp" alt="BBA transformation"></div>
+      <div class="tk-card"><img src="https://jasestuart.github.io/LOOM-PITCH-JASE-M/assets/embed/img14.webp" alt="BBA transformation"></div>
+      <div class="tk-card"><img src="https://jasestuart.github.io/LOOM-PITCH-JASE-M/assets/embed/img15.webp" alt="BBA transformation"></div>
+      <div class="tk-card"><img src="https://jasestuart.github.io/LOOM-PITCH-JASE-M/assets/embed/img16.webp" alt="BBA transformation"></div>
+      <div class="tk-card"><img src="https://jasestuart.github.io/LOOM-PITCH-JASE-M/assets/embed/img17.webp" alt="BBA transformation"></div>
+      <div class="tk-card"><img src="https://jasestuart.github.io/LOOM-PITCH-JASE-M/assets/embed/img18.webp" alt="BBA transformation"></div>
+      <div class="tk-card"><img src="https://jasestuart.github.io/LOOM-PITCH-JASE-M/assets/embed/img19.webp" alt="BBA transformation"></div>
+      <div class="tk-card"><img src="https://jasestuart.github.io/LOOM-PITCH-JASE-M/assets/embed/img20.webp" alt="BBA transformation"></div>
+      <div class="tk-card"><img src="https://jasestuart.github.io/LOOM-PITCH-JASE-M/assets/embed/img21.webp" alt="BBA transformation"></div>
+      <div class="tk-card"><img src="https://jasestuart.github.io/LOOM-PITCH-JASE-M/assets/embed/img02.webp" alt="BBA transformation"></div>
+      <div class="tk-card"><img src="https://jasestuart.github.io/LOOM-PITCH-JASE-M/assets/embed/img03.webp" alt="BBA transformation"></div>
+      <div class="tk-card"><img src="https://jasestuart.github.io/LOOM-PITCH-JASE-M/assets/embed/img04.webp" alt="BBA transformation"></div>
+      <div class="tk-card"><img src="https://jasestuart.github.io/LOOM-PITCH-JASE-M/assets/embed/img05.webp" alt="BBA transformation"></div>
+      <div class="tk-card"><img src="https://jasestuart.github.io/LOOM-PITCH-JASE-M/assets/embed/img06.webp" alt="BBA transformation"></div>
+      <div class="tk-card"><img src="https://jasestuart.github.io/LOOM-PITCH-JASE-M/assets/embed/img07.webp" alt="BBA transformation"></div>
+      <div class="tk-card"><img src="https://jasestuart.github.io/LOOM-PITCH-JASE-M/assets/embed/img08.webp" alt="BBA transformation"></div>
+      <div class="tk-card"><img src="https://jasestuart.github.io/LOOM-PITCH-JASE-M/assets/embed/img09.webp" alt="BBA transformation"></div>
+      <div class="tk-card"><img src="https://jasestuart.github.io/LOOM-PITCH-JASE-M/assets/embed/img10.webp" alt="BBA transformation"></div>
+      <div class="tk-card"><img src="https://jasestuart.github.io/LOOM-PITCH-JASE-M/assets/embed/img11.webp" alt="BBA transformation"></div>
+      <div class="tk-card"><img src="https://jasestuart.github.io/LOOM-PITCH-JASE-M/assets/embed/img12.webp" alt="BBA transformation"></div>
+      <div class="tk-card"><img src="https://jasestuart.github.io/LOOM-PITCH-JASE-M/assets/embed/img13.webp" alt="BBA transformation"></div>
+      <div class="tk-card"><img src="https://jasestuart.github.io/LOOM-PITCH-JASE-M/assets/embed/img14.webp" alt="BBA transformation"></div>
+      <div class="tk-card"><img src="https://jasestuart.github.io/LOOM-PITCH-JASE-M/assets/embed/img15.webp" alt="BBA transformation"></div>
+      <div class="tk-card"><img src="https://jasestuart.github.io/LOOM-PITCH-JASE-M/assets/embed/img16.webp" alt="BBA transformation"></div>
+      <div class="tk-card"><img src="https://jasestuart.github.io/LOOM-PITCH-JASE-M/assets/embed/img17.webp" alt="BBA transformation"></div>
+      <div class="tk-card"><img src="https://jasestuart.github.io/LOOM-PITCH-JASE-M/assets/embed/img18.webp" alt="BBA transformation"></div>
+      <div class="tk-card"><img src="https://jasestuart.github.io/LOOM-PITCH-JASE-M/assets/embed/img19.webp" alt="BBA transformation"></div>
+      <div class="tk-card"><img src="https://jasestuart.github.io/LOOM-PITCH-JASE-M/assets/embed/img20.webp" alt="BBA transformation"></div>
+      <div class="tk-card"><img src="https://jasestuart.github.io/LOOM-PITCH-JASE-M/assets/embed/img21.webp" alt="BBA transformation"></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WHAT YOU GET -->
+<section class="section">
+  <p class="section-label">The program</p>
+  <h2 class="section-title">What's inside BBA</h2>
+
+  <div class="features">
+    <div class="feature">
+      <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg></div>
+      <div class="feature-title">Your custom nutrition plan</div>
+      <div class="feature-desc">Built around your lifestyle, your food, your schedule. No meal prep obsession, no tracking every gram forever.</div>
+    </div>
+    <div class="feature">
+      <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3.5" y1="9" x2="3.5" y2="15"/><line x1="6.5" y1="7.5" x2="6.5" y2="16.5"/><line x1="6.5" y1="12" x2="17.5" y2="12"/><line x1="17.5" y1="7.5" x2="17.5" y2="16.5"/><line x1="20.5" y1="9" x2="20.5" y2="15"/></svg></div>
+      <div class="feature-title">Training that fits your life</div>
+      <div class="feature-desc">3–4 sessions a week. Gym or home. Structured to actually build muscle while the fat comes off.</div>
+    </div>
+    <div class="feature">
+      <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+      <div class="feature-title">Your own BBA coach</div>
+      <div class="feature-desc">Weekly check-ins, real accountability, and a coach who adjusts the plan when life gets in the way.</div>
+    </div>
+    <div class="feature">
+      <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg></div>
+      <div class="feature-title">Daily support in your pocket</div>
+      <div class="feature-desc">Message your coach any time. No more guessing, no more flying solo through the hard weeks.</div>
+    </div>
+    <div class="feature">
+      <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></svg></div>
+      <div class="feature-title">The mindset piece</div>
+      <div class="feature-desc">We fix the habits and patterns that caused every previous attempt to fall apart. That's the real work.</div>
+    </div>
+    <div class="feature">
+      <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
+      <div class="feature-title">A system you keep forever</div>
+      <div class="feature-desc">You're not renting results. By the time you're done, you know exactly how to maintain this on your own.</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- VIDEO TESTIMONIALS -->
+<section class="section band">
+  <p class="section-label">Hear it from them</p>
+  <h2 class="section-title">What our guys say when they're done</h2>
+  <div class="testi-grid">
+
+    <div class="testi-card">
+      <div class="testi-quote">"Within the first three months I lost 10 kilos, gained a stack of muscle, and felt fantastic. Eight months later I'm still holding the same weight and the same muscle."</div>
+      <div class="testi-video">
+        <iframe src="https://player.vimeo.com/video/686562089" allowfullscreen allow="autoplay; fullscreen"></iframe>
+      </div>
+      <div class="testi-info">
+        <div class="testi-name">Brent Thoroughgood</div>
+        <div class="testi-tag">Lost 10kg, gained muscle — still holding it 8 months later</div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-quote">"I'd tried a lot of diets and couldn't shift the weight. 23 weeks in, I've lost around 22 kilos and 24 centimetres off the gut."</div>
+      <div class="testi-video">
+        <iframe src="https://player.vimeo.com/video/686562155" allowfullscreen allow="autoplay; fullscreen"></iframe>
+      </div>
+      <div class="testi-info">
+        <div class="testi-name">Terry Holden</div>
+        <div class="testi-tag">Lost 22kg and 24cm off the waist in 23 weeks</div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-quote">"12 months ago I was around 100 kilos, hadn't been to the gym in 20 years. Since joining BBA I'm down to 81 kilos and I'm never going back."</div>
+      <div class="testi-video">
+        <iframe src="https://player.vimeo.com/video/686542699" allowfullscreen allow="autoplay; fullscreen"></iframe>
+      </div>
+      <div class="testi-info">
+        <div class="testi-name">Alex Render</div>
+        <div class="testi-tag">Down 19kg — back at the gym, kayaking, playing golf</div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-quote">"A year on I'm sitting at 68 kilos, over 30 kilos less than when I started. If you're sitting on the fence, don't hesitate."</div>
+      <div class="testi-video">
+        <iframe src="https://player.vimeo.com/video/686544399" allowfullscreen allow="autoplay; fullscreen"></iframe>
+      </div>
+      <div class="testi-info">
+        <div class="testi-name">Balraj Singh</div>
+        <div class="testi-tag">Lost 30kg — started for a wedding, never looked back</div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-quote">"18 months in the BBA and I've lost over 65 kilograms and around 46 centimetres off the waist. If you're sitting on the fence — come and change your life."</div>
+      <div class="testi-video">
+        <iframe src="https://player.vimeo.com/video/1105200317" allowfullscreen allow="autoplay; fullscreen"></iframe>
+      </div>
+      <div class="testi-info">
+        <div class="testi-name">Chris Lupton</div>
+        <div class="testi-tag">Lost 65kg and 46cm off the waist in 18 months</div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-quote">"Between work, the kids, and losing my dad, I'd got sloppy and felt really stuck. These days I'm running ultra marathons with a mindset that won't break — down 14 kilos and never going back."</div>
+      <div class="testi-video">
+        <iframe src="https://player.vimeo.com/video/642859025" allowfullscreen allow="autoplay; fullscreen"></iframe>
+      </div>
+      <div class="testi-info">
+        <div class="testi-name">Matty Kong</div>
+        <div class="testi-tag">Lost 14kg — now running ultra marathons</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WHO IT'S FOR -->
+<section class="section">
+  <p class="section-label">Is this you?</p>
+  <h2 class="section-title">This works if you're a man who...</h2>
+
+  <div class="for-list">
+    <div class="for-item">
+      <div class="for-check">✓</div>
+      <div class="for-text">Has 3–4 hours a week to train, not 3–4 hours a day, and needs a program built around that</div>
+    </div>
+    <div class="for-item">
+      <div class="for-check">✓</div>
+      <div class="for-text">Wants to eat real food, not live off meal preps and protein shakes for the rest of his life</div>
+    </div>
+    <div class="for-item">
+      <div class="for-check">✓</div>
+      <div class="for-text">Is done with plans that work for 6 weeks then fall apart the moment life gets busy</div>
+    </div>
+    <div class="for-item">
+      <div class="for-check">✓</div>
+      <div class="for-text">Travels, eats out, drinks occasionally, and needs a nutrition approach that handles all of it</div>
+    </div>
+    <div class="for-item">
+      <div class="for-check">✓</div>
+      <div class="for-text">Wants to build a body he can maintain without his entire life revolving around it</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FAQ -->
+<section class="section band">
+  <p class="section-label">Straight answers</p>
+  <h2 class="section-title">Frequently Asked <span class="faq-accent">Questions</span></h2>
+  <p class="faq-sub">The stuff blokes ask before they sign up. Straight answers, no fluff.</p>
+
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary><span>I've tried everything and fallen off before. Why would this be any different?</span><span class="faq-toggle">+</span></summary>
+      <div class="faq-answer"><p>Most programs hand you a plan and leave you to figure it out alone — that's exactly why they fall apart. You get a dedicated coach who checks in every week and adjusts the plan the moment life gets in the way. That's why 98% of our guys are still going strong past the first 90 days.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary><span>I'm flat out. How many hours a week does this actually take?</span><span class="faq-toggle">+</span></summary>
+      <div class="faq-answer"><p>3 to 4 hours of training a week — not 3 to 4 hours a day. The nutrition side is built around your real life: work dinners, travel and weekends all included. This was designed for busy men who don't have spare time to burn.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary><span>Do I have to go keto, carnivore or quit carbs?</span><span class="faq-toggle">+</span></summary>
+      <div class="faq-answer"><p>No. No banned foods, no extreme diets, no living off chicken and rice. We build the plan around the food you actually enjoy — so you can hold onto the results long after the program ends.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary><span>I hate gyms. Can I train at home?</span><span class="faq-toggle">+</span></summary>
+      <div class="faq-answer"><p>Absolutely. Gym or home — we build the training around whatever equipment you've got and wherever you're most likely to actually show up. No commute required.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary><span>I travel a lot and enjoy a drink. Will that wreck it?</span><span class="faq-toggle">+</span></summary>
+      <div class="faq-answer"><p>It won't. The whole system is designed for real life — eating out, hotel stays and a few beers with the boys included. You'll learn how to keep moving forward without putting your life on hold.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary><span>What about Ozempic and the weight-loss jabs?</span><span class="faq-toggle">+</span></summary>
+      <div class="faq-answer"><p>You don't need them here. We fix the habits, training and nutrition that actually keep the weight off — so you build a body you can maintain on your own, not one you're renting from a prescription.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary><span>How quickly will I actually see results?</span><span class="faq-toggle">+</span></summary>
+      <div class="faq-answer"><p>Most guys feel different within 2 weeks and see visible change by week 4 to 6. Across our 3,000+ members the average is 10 to 15kg down in the first 12 weeks.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary><span>What does it cost — and do I have to pay it all upfront?</span><span class="faq-toggle">+</span></summary>
+      <div class="faq-answer"><p>Basecamp is $3,250 paid in full, or $250 to start and $125 per week. Most guys choose the weekly option. Either way you get the full program from day one.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary><span>When do I start?</span><span class="faq-toggle">+</span></summary>
+      <div class="faq-answer"><p>As soon as you send the message. We onboard you within 24 to 48 hours, you meet your coach, and you're off.</p></div>
+    </details>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section">
+  <div class="cta-inner">
+    <h2>If that video resonated, here's what to do next.</h2>
+    <p>Jump back into our DM conversation and send me one message.</p>
+
+    <div class="cta-box">
+      <div class="cta-step">Go back to our DM conversation and send me this</div>
+      <div class="cta-message">"I'M IN COACH"</div>
+      <div class="cta-sub">That's it. I'll take it from there.</div>
+    </div>
+
+    <div class="platform-btns">
+      <a href="https://www.instagram.com/jasestuart_fit/" class="social-icon-btn" target="_blank" rel="noopener noreferrer" aria-label="Jase Stuart on Instagram">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="72" height="72">
+          <defs>
+            <radialGradient id="ig-grad" cx="30%" cy="107%" r="140%">
+              <stop offset="0%" stop-color="#ffdd55"/>
+              <stop offset="10%" stop-color="#ffdd55"/>
+              <stop offset="40%" stop-color="#ff543e"/>
+              <stop offset="55%" stop-color="#ff1c74"/>
+              <stop offset="72%" stop-color="#c837ab"/>
+              <stop offset="100%" stop-color="#4f5bd5"/>
+            </radialGradient>
+          </defs>
+          <rect width="100" height="100" rx="24" fill="url(#ig-grad)"/>
+          <rect x="26" y="26" width="48" height="48" rx="14" fill="none" stroke="white" stroke-width="6"/>
+          <circle cx="50" cy="50" r="12.5" fill="none" stroke="white" stroke-width="6"/>
+          <circle cx="66.5" cy="33.5" r="3.4" fill="white"/>
+        </svg>
+      </a>
+      <a href="https://www.facebook.com/jasestuartBBC" class="social-icon-btn" target="_blank" rel="noopener noreferrer" aria-label="Jase Stuart on Facebook">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="72" height="72">
+          <rect width="100" height="100" rx="22" fill="#1877F2"/>
+          <path d="M57 55h8l2-12h-10V36c0-3 1.5-6 6-6h5V20s-4-1-8-1c-10 0-16 6-16 17v7H34v12h10v28h13V55z" fill="white"/>
+        </svg>
+      </a>
+      <a href="https://www.tiktok.com/@jasestuart_fit" class="social-icon-btn" target="_blank" rel="noopener noreferrer" aria-label="Jase Stuart on TikTok">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="72" height="72">
+          <rect width="100" height="100" rx="22" fill="#010101"/>
+          <g transform="translate(26,20) scale(2.25)">
+            <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" fill="#25F4EE" transform="translate(-0.9,-0.9)"/>
+            <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" fill="#FE2C55" transform="translate(0.9,0.9)"/>
+            <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" fill="white"/>
+          </g>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  Copyright &copy; 2026 Better Body Academy. All rights reserved.
+</footer>
+
+
+<script>
+(function(){
+  const wrap = document.querySelector('.tk-wrap');
+  if (!wrap) return;
+  // Touch devices scroll natively (overflow-x). Add click-drag for desktop.
+  let isDown = false, startX = 0, startScroll = 0;
+  wrap.addEventListener('mousedown', e => {
+    isDown = true;
+    startX = e.pageX;
+    startScroll = wrap.scrollLeft;
+    e.preventDefault();
+  });
+  window.addEventListener('mouseup', () => { isDown = false; });
+  window.addEventListener('mousemove', e => {
+    if (!isDown) return;
+    wrap.scrollLeft = startScroll - (e.pageX - startX);
+  });
+})();
+</script>
+
+<script>
+(function(){
+  if (!('IntersectionObserver' in window)) {
+    document.querySelectorAll('.features .feature, .for-list .for-item')
+      .forEach(function(el){ el.classList.add('reveal'); }); // unsupported: show all
+    return;
+  }
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting) {
+        e.target.classList.add('reveal');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.2, rootMargin: '0px 0px -10% 0px' });
+
+  document.querySelectorAll('.features').forEach(function(grid){
+    grid.querySelectorAll('.feature').forEach(function(card, i){
+      card.style.transitionDelay = (i % 3) * 0.1 + 's';
+      obs.observe(card);
+    });
+  });
+  // Checklist rows: trigger as each row enters from the bottom, with a clear stagger
+  var listObs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting) {
+        e.target.classList.add('reveal');
+        listObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0, rootMargin: '0px 0px -80px 0px' });
+  document.querySelectorAll('.for-list').forEach(function(list){
+    list.querySelectorAll('.for-item').forEach(function(item, i){
+      item.style.transitionDelay = (i * 0.12) + 's';
+      listObs.observe(item);
+    });
+  });
+})();
+</script>
+
+</div>
