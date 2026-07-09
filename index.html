@@ -1121,20 +1121,61 @@
 <script>
 (function(){
   const wrap = document.querySelector('.tk-wrap');
-  if (!wrap) return;
-  // Touch devices scroll natively (overflow-x). Add click-drag for desktop.
-  let isDown = false, startX = 0, startScroll = 0;
+  const track = document.getElementById('tkTrack');
+  if (!wrap || !track) return;
+
+  // Duplicate the cards once so the strip can loop seamlessly.
+  Array.from(track.children).forEach(node => track.appendChild(node.cloneNode(true)));
+
+  let half = 0;
+  const measure = () => { half = track.scrollWidth / 2; };
+  const whenReady = () => {
+    measure();
+    // Re-measure after images load (scrollWidth grows as images size up).
+    track.querySelectorAll('img').forEach(img => {
+      if (!img.complete) img.addEventListener('load', measure, { once: true });
+    });
+  };
+  whenReady();
+  window.addEventListener('resize', measure);
+
+  const SPEED = 0.45; // px per frame — gentle continuous slide to the left
+  let paused = false, isDown = false, startX = 0, startScroll = 0;
+
+  function normalize() {
+    if (!half) return;
+    if (wrap.scrollLeft >= half) wrap.scrollLeft -= half;
+    else if (wrap.scrollLeft < 0) wrap.scrollLeft += half;
+  }
+
+  function tick() {
+    if (!paused && !isDown && half) {
+      wrap.scrollLeft += SPEED;
+      normalize();
+    }
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+
+  // Pause auto-slide while the user is interacting.
+  wrap.addEventListener('mouseenter', () => { paused = true; });
+  wrap.addEventListener('mouseleave', () => { paused = false; });
+  wrap.addEventListener('touchstart', () => { paused = true; }, { passive: true });
+  wrap.addEventListener('touchend', () => { paused = false; }, { passive: true });
+
+  // Click-drag for desktop.
   wrap.addEventListener('mousedown', e => {
-    isDown = true;
-    startX = e.pageX;
-    startScroll = wrap.scrollLeft;
-    e.preventDefault();
+    isDown = true; startX = e.pageX; startScroll = wrap.scrollLeft; e.preventDefault();
   });
   window.addEventListener('mouseup', () => { isDown = false; });
   window.addEventListener('mousemove', e => {
     if (!isDown) return;
     wrap.scrollLeft = startScroll - (e.pageX - startX);
+    normalize();
   });
+
+  // Keep the loop seamless during native touch/trackpad scrolling.
+  wrap.addEventListener('scroll', normalize, { passive: true });
 })();
 </script>
 
